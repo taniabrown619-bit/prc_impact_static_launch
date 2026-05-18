@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="PRC Impact AI Governance Infrastructure">
+  <rect width="1200" height="630" fill="#080808"/>
+  <rect x="56" y="56" width="1088" height="518" fill="none" stroke="#B89228" stroke-width="3"/>
+  <path d="M160 158 238 203v90L160 338 82 293v-90l78-45Z" fill="none" stroke="#F7F7F4" stroke-width="15" stroke-linejoin="round"/>
+  <path d="M160 198 201 222v47l-41 24-41-24v-47l41-24Z" fill="none" stroke="#F7F7F4" stroke-width="11" stroke-linejoin="round"/>
+  <circle cx="232" cy="150" r="13" fill="#B89228"/>
+  <text x="305" y="230" fill="#F7F7F4" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="700" letter-spacing="-3">PRC IMPACT</text>
+  <line x1="305" y1="278" x2="430" y2="278" stroke="#B89228" stroke-width="4"/>
+  <text x="305" y="365" fill="#F7F7F4" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="400" letter-spacing="-1">AI Governance Infrastructure</text>
+  <text x="305" y="432" fill="#C8C2B5" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="400">For AI use, risk, and accountability.</text>
+</svg>
