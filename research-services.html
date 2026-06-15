@@ -216,6 +216,25 @@
     if(e.key === 'Escape') setOpen(false);
   });
 })();
+
+// Scroll reveal — section heads + body paragraphs, once per element
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce) return;
+  if(!('IntersectionObserver' in window)) return;
+  var sel = '.section-head, .hero-lede, .section p, .section li, .section .case-card, .section .audience-row, .case-hero p';
+  var targets = document.querySelectorAll(sel);
+  targets.forEach(function(el){ el.classList.add('reveal'); });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('reveal-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(function(el){ io.observe(el); });
+})();
 </script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "@id": "https://prcimpact.com/#organization", "name": "PRC Impact", "alternateName": ["PRC Impact Research", "PRC Impact LLC"], "url": "https://prcimpact.com", "logo": "https://prcimpact.com/assets/og-image.png", "image": "https://prcimpact.com/assets/og-image.png", "description": "Senior-led qualitative research and civic strategy firm serving public agencies, nonprofits, coalitions, campaigns, and mission-driven organizations across the South and nationally.", "slogan": "Research that shapes decisions people can stand behind.", "founder": {"@type": "Person", "@id": "https://prcimpact.com/about.html#tania-johns", "name": "Tania Johns", "jobTitle": "Founder and Principal"}, "foundingDate": "2024", "address": {"@type": "PostalAddress", "addressLocality": "Montgomery", "addressRegion": "AL", "addressCountry": "US"}, "telephone": "+1-334-429-6994", "email": "info@prcimpact.com", "areaServed": [{"@type": "State", "name": "Alabama"}, {"@type": "Place", "name": "Southern United States"}, {"@type": "Country", "name": "United States"}], "knowsAbout": ["Qualitative research", "Focus groups", "Listening sessions", "Stakeholder interviews", "Message and issue research", "Civic strategy", "Public-impact research", "Community engagement research", "AI literacy"], "hasOfferCatalog": {"@type": "OfferCatalog", "name": "PRC Impact Service Lines", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Qualitative Research Studies", "description": "End-to-end research designed around the decision you need to make."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Focus Groups, Interviews, and Listening Sessions", "description": "Senior-led facilitation with the people whose perspectives need to be understood."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Message and Issue Research", "description": "Testing how language, framing, and positioning land before they go public."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Strategy from the Findings", "description": "Clear recommendations that help turn research into decisions, messages, engagement plans, and next steps."}}]}, "sameAs": ["https://www.linkedin.com/company/prcimpact-research"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://prcimpact.com/"}, {"@type": "ListItem", "position": 2, "name": "Research", "item": "https://prcimpact.com/research-services.html"}]}</script>
