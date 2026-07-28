@@ -75,9 +75,12 @@
     Permissions-Policy = "geolocation=(), microphone=(), camera=(), interest-cohort=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     # CSP widened to allow the embedded CRM contact form widget.
-    # Allowed hosts: cdnstyles.com (widget script), apigateway.co (form API),
+    # Requires 'unsafe-eval': the widget builds the form via eval at runtime.
+    # Without it the script loads, the API returns 200, and the form silently
+    # never renders. Allowed hosts: cdnstyles.com (widget script),
+    # apigateway.co (form API),
     # Google reCAPTCHA + Fonts + Maps/Places (loaded by the widget).
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.cdnstyles.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.cdnstyles.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https://www.cdnstyles.com https://www.google.com https://www.gstatic.com https://maps.gstatic.com; connect-src 'self' https://forms-prod.apigateway.co https://places.googleapis.com https://maps.googleapis.com https://www.googleapis.com; frame-src https://www.google.com https://www.cdnstyles.com; form-action 'self' https://forms-prod.apigateway.co; frame-ancestors 'self'; base-uri 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.cdnstyles.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.cdnstyles.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https://www.cdnstyles.com https://www.google.com https://www.gstatic.com https://maps.gstatic.com; connect-src 'self' https://forms-prod.apigateway.co https://places.googleapis.com https://maps.googleapis.com https://www.googleapis.com; frame-src https://www.google.com https://www.cdnstyles.com; form-action 'self' https://forms-prod.apigateway.co; frame-ancestors 'self'; base-uri 'self'"
 
 # ---------------------------------------------------------------
 # 4. Caching.
