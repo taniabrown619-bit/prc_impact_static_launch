@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You · PRC Impact</title>
+<meta name="description" content="Your message has been received. PRC Impact responds to inquiries within two business days.">
+<meta name="robots" content="noindex, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Thank You · PRC Impact">
+<meta property="og:description" content="Your message has been received. PRC Impact responds to inquiries within two business days.">
+<meta property="og:url" content="https://prcimpact.com/thank-you.html">
+<meta property="og:site_name" content="PRC Impact">
+<meta property="og:image" content="https://prcimpact.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="author" content="PRC Impact">
+<meta name="theme-color" content="#0b0b0b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<nav class="top" aria-label="Primary">
+  <a aria-label='PRC Impact home' class='logo-link' href='/'>
+    <img class="logo-img" src="assets/logo-white-cropped.png" alt="PRC Impact">
+  </a>
+  <div class="nav-links"><a href='/'>Home</a><a href='/research-services'>Research</a><a href='/who-we-center'>Who We Center</a><a href='/work'>Selected Work</a><a href='/about'>About</a><a class='active' href='/contact'>Contact</a></div>
+  <a class='nav-cta' href='/contact'>Book a Call</a>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+</nav>
+<div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+  <div class="mobile-drawer-inner">
+    <nav class="mobile-nav-links" aria-label="Mobile primary"><a href='/'>Home</a><a href='/research-services'>Research</a><a href='/who-we-center'>Who We Center</a><a href='/work'>Selected Work</a><a href='/about'>About</a><a class='active' href='/contact'>Contact</a></nav>
+    <a class='btn btn-primary mobile-drawer-cta' href='/contact'>Book a Discovery Call</a>
+  </div>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Message Received</span>
+    <h1>Thank you. Your message is in.</h1>
+    <p class="page-lede">We read every inquiry personally. You can expect a reply within two business days.</p>
+    <p class="page-lede">If your project has an active RFP or a hard deadline, email <a href="mailto:info@prcimpact.com">info@prcimpact.com</a> directly and put the date in the subject line so it moves to the front of the queue.</p>
+  </div>
+</section>
+
+<section class="section section-cream">
+  <div class="container">
+    <h2 class="section-title">While You Wait</h2>
+    <p class="muted">A few places to get a clearer picture of how we work.</p>
+    <ul class="contact-list">
+      <li><span class="label">Our Approach</span><a href="/research-services">How we design and lead research</a></li>
+      <li><span class="label">Selected Work</span><a href="/work">Case studies and outcomes</a></li>
+      <li><span class="label">About</span><a href="/about">Tania Johns and the firm</a></li>
+      <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/company/prcimpact-research" target="_blank" rel="noopener noreferrer">linkedin.com/company/prcimpact-research</a></li>
+    </ul>
+    <p><a class="btn btn-primary" href="/">Return to Home</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <img class="foot-logo" src="assets/logo-white-cropped.png" alt="PRC Impact">
+      <p>Senior-led qualitative research and civic strategy.</p>
+      <p>Based in Montgomery, Alabama.</p>
+      <p>Serving public-impact organizations across the South and nationally.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Firm</h4>
+      <a href='/about'>About</a>
+      <a href='/work'>Selected Work</a>
+      <a href='/speaking-briefings'>Speaking &amp; Briefings</a>
+    </div>
+    <div class="foot-col">
+      <h4>Services</h4>
+      <a href='/research-services'>Research</a>
+      <a href='/who-we-center'>Who We Center</a>
+    </div>
+    <div class="foot-col">
+      <h4>Connect</h4>
+      <a href='/contact'>Book a Discovery Call</a>
+      <a href="https://www.linkedin.com/company/prcimpact-research" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:info@prcimpact.com">info@prcimpact.com</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 PRC Impact, LLC. All rights reserved.</span>
+    <span class="foot-legal-links">
+      <a href='/privacy'>Privacy Notice</a>
+      <a href='/terms'>Terms of Service</a>
+    </span>
+    <span>Montgomery, AL</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var drawer = document.getElementById('mobile-drawer');
+  if(!btn || !drawer) return;
+  function setOpen(open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+    document.body.classList.toggle('drawer-open', open);
+  }
+  btn.addEventListener('click', function(){
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    setOpen(!isOpen);
+  });
+  drawer.addEventListener('click', function(e){
+    if(e.target.tagName === 'A') setOpen(false);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') setOpen(false);
+  });
+})();
+</script>
+</body>
+</html>

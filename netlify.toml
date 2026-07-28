@@ -1,0 +1,102 @@
+# netlify.toml — place in repo root (same level as index.html)
+# PRC Impact static site
+
+[build]
+  publish = "."
+
+# ---------------------------------------------------------------
+# 1. Force the Netlify preview subdomain to the real domain.
+#    Stops golden-elf-52cfd6.netlify.app from being crawled and
+#    indexed as a duplicate copy of the site.
+# ---------------------------------------------------------------
+[[redirects]]
+  from = "https://golden-elf-52cfd6.netlify.app/*"
+  to = "https://prcimpact.com/:splat"
+  status = 301
+  force = true
+
+# ---------------------------------------------------------------
+# 2. Legacy URL cleanup — old Wix-era paths.
+#    Add or remove lines here as you confirm which old URLs
+#    still receive traffic (check Search Console once verified).
+# ---------------------------------------------------------------
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/services"
+  to = "/research-services"
+  status = 301
+
+[[redirects]]
+  from = "/services/*"
+  to = "/research-services"
+  status = 301
+
+[[redirects]]
+  from = "/about-us"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/our-work"
+  to = "/work"
+  status = 301
+
+[[redirects]]
+  from = "/case-studies"
+  to = "/work"
+  status = 301
+
+[[redirects]]
+  from = "/blog"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/post/*"
+  to = "/"
+  status = 301
+
+# ---------------------------------------------------------------
+# 3. Security headers.
+#    Public-sector and enterprise procurement teams run automated
+#    scans on vendor sites. These are table stakes and currently
+#    absent from every response.
+# ---------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    # CSP widened to allow the embedded CRM contact form widget.
+    # Allowed hosts: cdnstyles.com (widget script), apigateway.co (form API),
+    # Google reCAPTCHA + Fonts + Maps/Places (loaded by the widget).
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.cdnstyles.com https://www.google.com https://www.gstatic.com https://maps.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.cdnstyles.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https://www.cdnstyles.com https://www.google.com https://www.gstatic.com https://maps.gstatic.com; connect-src 'self' https://forms-prod.apigateway.co https://places.googleapis.com https://maps.googleapis.com https://www.googleapis.com; frame-src https://www.google.com https://www.cdnstyles.com; form-action 'self' https://forms-prod.apigateway.co; frame-ancestors 'self'; base-uri 'self'"
+
+# ---------------------------------------------------------------
+# 4. Caching.
+#    Static assets are currently served with max-age=0, so every
+#    visitor re-downloads or re-validates the CSS, logo, and fonts
+#    on every page view. Slower site, worse Core Web Vitals.
+# ---------------------------------------------------------------
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, must-revalidate"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# HTML stays uncached so copy edits go live immediately
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

@@ -2118,3 +2118,39 @@ body.drawer-open { overflow: hidden; }
     transition: none !important;
   }
 }
+/* ============================================================
+   Append to the END of css/site.css
+   Contact form widget support
+   ============================================================ */
+
+/* Container for the embedded CRM form */
+.crm-form-embed {
+  min-height: 480px;      /* reserves space so the page doesn't jump when the form loads */
+  width: 100%;
+}
+
+/* Fallback shown if the form cannot load */
+.form-fallback {
+  border: 1px solid #DDDAD3;
+  border-left: 4px solid #17171C;
+  background: #F7F5F0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
+
+.form-fallback p {
+  margin: 0 0 0.5rem 0;
+}
+
+.form-fallback p:last-child {
+  margin-bottom: 0;
+}
+
+/* Small print under the form */
+.form-note {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 1rem;
+  opacity: 0.85;
+}
