@@ -1,58 +1,140 @@
 # PRC Impact — Website
 
-Static HTML/CSS site for PRC Impact. No build step. Drop into any static host (Netlify, Vercel, GitHub Pages, S3).
+Static HTML/CSS site for [prcimpact.com](https://prcimpact.com). No build step, no framework, no dependencies. The files in this repo are the files on the web.
+
+---
+
+## Hosting
+
+| | |
+|---|---|
+| Host | Netlify |
+| Netlify site | `golden-elf-52cfd6` (301s to the custom domain) |
+| Primary domain | `prcimpact.com` (apex) |
+| `www` | 301 redirect to apex |
+| Deploy trigger | Every push to `main` |
+| Build command | none |
+| Publish directory | `/` (root) |
+
+Netlify's **Pretty URLs** post-processing strips `.html` from internal links at deploy time. That is why the source files link to `contact.html` while the live site serves `/contact`. Write links **with** the `.html` extension in source.
+
+---
 
 ## Structure
 
 ```
-prc-site/
 ├── index.html                                # Home
-├── research-services.html                    # Research Services
+├── research-services.html                    # Research
 ├── who-we-center.html                        # Who We Center
 ├── work.html                                 # Selected Work (index)
 ├── about.html                                # About
 ├── contact.html                              # Contact + form
+├── speaking-briefings.html                   # Speaking & Briefings
+├── thank-you.html                            # Form confirmation (noindex)
+├── privacy.html                              # Privacy Notice
+├── terms.html                                # Terms of Service
 ├── work/
-│   ├── birmingham-violence-prevention.html   # Case study 1
-│   ├── prescriber-comprehension.html         # Case study 2
-│   └── montgomery-public-schools.html        # Case study 3
+│   ├── montgomery-public-schools.html        # Case study
+│   ├── birmingham-violence-prevention.html   # Case study
+│   └── prescriber-comprehension.html         # Case study
 ├── css/
 │   └── site.css                              # All styles
-└── README.md
+├── assets/                                   # Logo, favicon, OG image
+├── netlify.toml                              # Redirects, security headers, caching
+├── robots.txt
+└── sitemap.xml
 ```
 
-## Deploy to Netlify (via GitHub)
-
-1. Create a new GitHub repo, e.g. `prc-impact-site`.
-2. From this folder:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial site"
-   git branch -M main
-   git remote add origin https://github.com/YOUR-USER/prc-impact-site.git
-   git push -u origin main
-   ```
-3. In Netlify → Add new site → Import an existing project → connect the repo.
-4. Build settings: **Build command** = (leave blank). **Publish directory** = `/` (root).
-5. Click Deploy.
+---
 
 ## Contact form
 
-The form on `contact.html` is wired to **Formspree** but uses a placeholder endpoint:
+> **History:** this page previously used `action="mailto:..."`, which silently fails for most
+> visitors — no submission, no error, no record. It was live from June 15 to July 27, 2026 and
+> lost an unknown number of inquiries. Never use a `mailto:` form action.
 
-```html
-<form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+The contact page uses a **hosted CRM form widget**, loaded from `cdnstyles.com` and submitting to `forms-prod.apigateway.co`. Configuration is base64-encoded in the script's `data` attribute.
+
+Current config:
+
+```json
+{
+  "formId": "FormConfigID-3840db3e-afb3-4cf3-a59e-eb2e1a1e2f26",
+  "baseURL": "https://forms-prod.apigateway.co",
+  "backgroundColor": "#F7F5F0",
+  "primaryColor": "#17171C",
+  "primaryFontColor": "#1B1B20",
+  "borderColor": "#DDDAD3",
+  "borderWidth": "1px",
+  "borderRadius": "4px",
+  "padding": "10px",
+  "width": "100%"
+}
 ```
 
-Replace `your-form-id` with your actual Formspree (or Basin, Formsubmit, Netlify Forms, etc.) endpoint. If using Netlify Forms instead, add `data-netlify="true"` to the form tag and remove the `action` attribute.
+To change settings, decode the `data` attribute, edit the JSON, re-encode as base64, and replace it.
 
-## Design system
+### Fallbacks — do not remove
 
-- **Palette**: pure white (#ffffff) primary · near-black (#15151a) ink · antique gold (#b8924a / #8a6a2e) accent
-- **Type**: Barlow Condensed (display) + Inter (body), loaded from Google Fonts
-- **Rhythm**: white sections punctuated by one dark services band and the dark footer
+The form is rendered client-side by a third-party script. If that script is blocked or fails, the form does not exist on the page at all. Two safety nets handle this:
+
+1. **`<noscript>` block** — shows email and phone when JavaScript is disabled.
+2. **6-second watchdog** (inline script near the bottom of `contact.html`) — if `#prc-contact-form` contains no `form`, `iframe`, or `input` after 6 seconds, it unhides `#form-fallback-timeout`, which shows email and phone.
+
+This matters because a meaningful share of visitors are public-agency staff on restricted networks that block unknown third-party domains and sometimes Google reCAPTCHA.
+
+### The CSP dependency
+
+`netlify.toml` sets a Content-Security-Policy that explicitly allowlists the form's domains:
+
+- `https://www.cdnstyles.com` — widget script
+- `https://forms-prod.apigateway.co` — form API (`connect-src`, `form-action`)
+- `https://www.google.com`, `https://www.gstatic.com` — reCAPTCHA
+- `https://maps.googleapis.com`, `https://places.googleapis.com` — address autocomplete
+
+**If the form vendor changes, the CSP must be updated in the same commit or the new form will be blocked.** Symptom: the form does not appear and the browser console shows a `Refused to load…` CSP violation naming the blocked domain.
+
+### Not yet done
+
+- Set `redirectUrl` to `/thank-you` in the CRM's form settings. `thank-you.html` already exists. Without it there is no conversion tracking.
+- No analytics installed. There is currently no way to detect that the form has stopped working.
+
+---
+
+## netlify.toml
+
+Four things live in this file:
+
+1. **Canonical host redirect** — `golden-elf-52cfd6.netlify.app` → `prcimpact.com`, so the Netlify subdomain is not indexed as a duplicate site.
+2. **Legacy redirects** — old Wix-era paths. Prune or extend based on Search Console data.
+3. **Security headers** — CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy. Public-sector and enterprise buyers run automated scans against vendor sites.
+4. **Caching** — 7 days for `/css/*`, 30 days for `/assets/*`, no caching for HTML so copy edits go live immediately.
+
+---
 
 ## Editing
 
-All copy lives directly in the HTML files. The shared design system is in `css/site.css`. Update once, applies everywhere.
+All copy lives directly in the HTML files. Shared styles are in `css/site.css` — update once, applies everywhere.
+
+**Editing in the GitHub web UI:** use the pencil icon to edit an existing file. Do not select-all and paste in a snippet — that replaces the entire page. On July 27, 2026 this wiped the nav, hero, footer, and schema markup from `contact.html`.
+
+Safer workflow for anything non-trivial: make the change on a branch, let Netlify build a deploy preview, review it, then merge.
+
+Each page carries its own `<title>`, meta description, canonical URL, Open Graph tags, and JSON-LD. When adding a page, copy an existing one and update all of them, then add the URL to `sitemap.xml`.
+
+---
+
+## Design system
+
+- **Palette:** near-black ink `#15151a` · antique gold `#b8924a` / `#8a6a2e` · cream `#F7F5F0` · white
+- **Type:** Barlow Condensed (display) + Inter (body), from Google Fonts
+- **Rhythm:** white sections punctuated by one dark services band and the dark footer
+
+---
+
+## Known issues
+
+- **Homepage contrast.** The H1 and the second hero paragraph are light grey on white and likely fail WCAG AA. Should be fixed — the site is sold to organizations with Section 508 obligations.
+- **Stale search index.** `www.prcimpact.com` is still indexed with the pre-relaunch Wix content. Requires a Google Search Console **Domain** property (DNS-verified, so it covers both `www` and apex), sitemap submission, URL inspection requests, and a temporary removal for the old URL. Bing Webmaster Tools too, since Bing feeds ChatGPT search and Copilot.
+- **No analytics.**
+- **`speaking-briefings.html` is thin** and is only linked from the footer.
