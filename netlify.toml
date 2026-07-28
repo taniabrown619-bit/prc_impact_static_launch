@@ -60,6 +60,93 @@
   to = "/"
   status = 301
 
+
+# ---------------------------------------------------------------
+# 2b. Canonical URL enforcement — one address per page.
+#    Netlify serves every page at both /page and /page.html and
+#    neither redirected, so Google indexed both copies and split
+#    the ranking signal. These 301s collapse them onto the clean
+#    URL, which is what the sitemap, canonicals and internal
+#    links now all point to.
+# ---------------------------------------------------------------
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy.html"
+  to = "/privacy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/research-services.html"
+  to = "/research-services"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/speaking-briefings.html"
+  to = "/speaking-briefings"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms.html"
+  to = "/terms"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/thank-you.html"
+  to = "/thank-you"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/who-we-center.html"
+  to = "/who-we-center"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/work.html"
+  to = "/work"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/work/birmingham-violence-prevention.html"
+  to = "/work/birmingham-violence-prevention"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/work/montgomery-public-schools.html"
+  to = "/work/montgomery-public-schools"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/work/prescriber-comprehension.html"
+  to = "/work/prescriber-comprehension"
+  status = 301
+  force = true
+
 # ---------------------------------------------------------------
 # 3. Security headers.
 #    Public-sector and enterprise procurement teams run automated
