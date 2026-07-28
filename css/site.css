@@ -2154,3 +2154,24 @@ body.drawer-open { overflow: hidden; }
   margin-top: 1rem;
   opacity: 0.85;
 }
+
+/* ============================================================
+   DARK-SECTION OVERRIDES — audience rows + outline button
+   Without these, .audience-rows and .btn-outline render dark
+   ink text on a dark background (invisible).
+   ============================================================ */
+.section-dark .audience-rows { border-top-color: var(--line-dark); }
+.section-dark .audience-rows li { border-bottom-color: var(--line-dark); }
+.section-dark .audience-rows h3 { color: var(--paper); }
+.section-dark .audience-rows p { color: var(--muted-dark); }
+.section-dark .btn-outline { color: var(--paper); border-color: rgba(255,255,255,0.55); }
+.section-dark .btn-outline:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+
+/* Audience note inside a service card — separate it from the description */
+.service-card .muted-note {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line-light);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
