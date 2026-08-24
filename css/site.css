@@ -1194,6 +1194,75 @@ footer {
 }
 
 /* ============================================================
+   WHO WE CENTER PAGE
+   ============================================================ */
+.audiences-page section { padding-left: 56px; padding-right: 56px; }
+.audiences-kicker { display: block; color: var(--gold-soft); font-size: 11px; line-height: 1.4; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; margin-bottom: 22px; }
+.audiences-hero { padding-top: 88px; padding-bottom: 82px; background: var(--paper-2); border-bottom: 1px solid var(--line-light); }
+.audiences-hero-grid { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(360px,.75fr); gap: 96px; align-items: end; }
+.audiences-hero h1 { max-width: 900px; font-family: 'Barlow Condensed', sans-serif; font-size: clamp(68px,7vw,104px); line-height: .93; letter-spacing: -.012em; text-transform: uppercase; }
+.audiences-hero h1 span { color: var(--gold-soft); }
+.audiences-hero-copy p { color: var(--muted-light); font-size: 17px; line-height: 1.72; margin-bottom: 16px; }
+.audiences-hero-copy p:first-child { color: var(--ink); font-size: 20px; }
+.audiences-hero-copy .btn { margin-top: 16px; }
+
+.audiences-depth { padding-top: 74px; padding-bottom: 70px; }
+.audiences-depth-intro { display: grid; grid-template-columns: 230px minmax(0,1fr); gap: 54px; align-items: start; margin-bottom: 38px; }
+.audiences-depth-intro h2, .audiences-practice h2, .audiences-proof h2 { max-width: 780px; font-family: 'Barlow Condensed', sans-serif; font-size: clamp(48px,4.5vw,68px); line-height: .98; text-transform: uppercase; }
+.audiences-depth-intro p { max-width: 720px; margin-top: 18px; color: var(--muted-light); font-size: 17px; line-height: 1.7; }
+.audiences-depth-rows { border-top: 1px solid var(--line-light); }
+.audiences-depth-rows article { display: grid; grid-template-columns: minmax(310px,.9fr) minmax(420px,1.1fr); gap: 80px; padding: 30px 0; border-bottom: 1px solid var(--line-light); }
+.audiences-depth-rows h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 34px; line-height: 1.04; text-transform: uppercase; }
+.audiences-depth-rows p { max-width: 700px; color: var(--muted-light); font-size: 16px; line-height: 1.7; }
+
+.audiences-practice { padding-top: 74px; padding-bottom: 74px; background: var(--ink-3); color: var(--paper); }
+.audiences-practice .audiences-kicker { color: var(--gold); }
+.audiences-practice-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(440px,.85fr); gap: 108px; }
+.audiences-practice h2 { color: var(--paper); }
+.audiences-practice-grid > div:last-child > p { color: var(--muted-dark); font-size: 17px; line-height: 1.72; }
+.audiences-practice-list { margin: 24px 0; border-top: 1px solid var(--line-dark); }
+.audiences-practice-list p { display: grid; grid-template-columns: 145px 1fr; gap: 24px; padding: 15px 0; border-bottom: 1px solid var(--line-dark); }
+.audiences-practice-list strong { color: var(--paper); font-size: 14px; }
+.audiences-practice-list span { color: var(--muted-dark); font-size: 14px; line-height: 1.55; }
+.audiences-practice .audiences-principle { color: var(--paper) !important; font-size: 14px !important; }
+
+.audiences-work-link { padding-top: 54px; padding-bottom: 54px; background: var(--paper-2); border-bottom: 1px solid var(--line-light); }
+.audiences-work-link-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(420px,.8fr); gap: 100px; align-items: end; }
+.audiences-work-link h2 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(42px,4vw,58px); line-height: .98; text-transform: uppercase; }
+.audiences-work-link p { max-width: 650px; color: var(--muted-light); font-size: 16px; line-height: 1.7; margin-bottom: 22px; }
+
+.audiences-proof { padding-top: 72px; padding-bottom: 66px; background: var(--paper); }
+.audiences-proof-head { display: flex; justify-content: space-between; gap: 48px; align-items: end; margin-bottom: 36px; }
+.audiences-proof-grid { border-top: 1px solid var(--line-light); }
+.audiences-proof-grid > a { display: grid; grid-template-columns: 1fr 220px; gap: 50px; align-items: end; padding: 30px 0; border-bottom: 1px solid var(--line-light); text-decoration: none; }
+.audiences-proof-grid a div > span { display: block; color: var(--gold-soft); font-size: 10px; line-height: 1.4; letter-spacing: .17em; text-transform: uppercase; font-weight: 700; margin-bottom: 12px; }
+.audiences-proof-grid h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 35px; line-height: 1; text-transform: uppercase; margin-bottom: 10px; }
+.audiences-proof-grid p { color: var(--muted-light); font-size: 15px; line-height: 1.6; }
+.audiences-proof-grid > a > strong { padding-left: 28px; border-left: 1px solid var(--line-light); color: var(--gold-soft); font-family: 'Barlow Condensed', sans-serif; font-size: 60px; line-height: .9; text-transform: uppercase; }
+.audiences-proof-grid strong small { display: block; margin-top: 10px; color: var(--ink); font-family: 'Inter', sans-serif; font-size: 10px; line-height: 1.4; letter-spacing: .15em; }
+.audiences-proof-grid a:hover h3 { color: var(--gold-soft); }
+
+@media (max-width: 1000px) {
+  .audiences-hero-grid, .audiences-practice-grid, .audiences-work-link-grid { grid-template-columns: 1fr; gap: 40px; }
+  .audiences-depth-intro { grid-template-columns: 1fr; gap: 0; }
+  .audiences-depth-rows article { grid-template-columns: 1fr; gap: 16px; }
+}
+
+@media (max-width: 680px) {
+  .audiences-page section { padding-left: 24px; padding-right: 24px; }
+  .audiences-hero { padding-top: 62px; padding-bottom: 56px; }
+  .audiences-hero h1 { font-size: clamp(56px,15vw,74px); }
+  .audiences-depth, .audiences-practice, .audiences-proof { padding-top: 56px; padding-bottom: 54px; }
+  .audiences-work-link { padding-top: 46px; padding-bottom: 46px; }
+  .audiences-depth-rows article { padding: 26px 0; }
+  .audiences-depth-rows h3 { font-size: 30px; }
+  .audiences-practice-list p { grid-template-columns: 1fr; gap: 5px; }
+  .audiences-proof-head { align-items: flex-start; flex-direction: column; }
+  .audiences-proof-grid > a { grid-template-columns: 1fr; gap: 22px; }
+  .audiences-proof-grid > a > strong { padding: 18px 0 0; border-left: 0; border-top: 1px solid var(--line-light); font-size: 48px; }
+}
+
+/* ============================================================
    SELECTED WORK INDEX
    ============================================================ */
 .portfolio-hero { padding: 78px 56px 64px; background: var(--paper-2); }
@@ -2459,3 +2528,4 @@ body.drawer-open { overflow: hidden; }
   .home-case-results { width: 100%; max-width: 620px; }
   .home-final-row { align-items: flex-start; flex-direction: column; }
 }
+
