@@ -16,7 +16,7 @@ Static HTML/CSS site for [prcimpact.com](https://prcimpact.com). No build step, 
 | Build command | none |
 | Publish directory | `/` (root) |
 
-Netlify's **Pretty URLs** post-processing strips `.html` from internal links at deploy time. That is why the source files link to `contact.html` while the live site serves `/contact`. Write links **with** the `.html` extension in source.
+Source and live internal links use clean extensionless routes such as `/contact` and `/work/montgomery-public-schools`. Netlify redirects legacy `.html` variants to their clean canonical routes.
 
 ---
 
@@ -29,14 +29,15 @@ Netlify's **Pretty URLs** post-processing strips `.html` from internal links at 
 ├── work.html                                 # Selected Work (index)
 ├── about.html                                # About
 ├── contact.html                              # Contact + form
-├── speaking-briefings.html                   # Speaking & Briefings
 ├── thank-you.html                            # Form confirmation (noindex)
 ├── privacy.html                              # Privacy Notice
 ├── terms.html                                # Terms of Service
 ├── work/
 │   ├── montgomery-public-schools.html        # Case study
 │   ├── birmingham-violence-prevention.html   # Case study
-│   └── prescriber-comprehension.html         # Case study
+│   ├── prescriber-comprehension.html         # Case study
+│   ├── steven-reed-mayoral-campaign.html     # Case study
+│   └── mps-capital-improvement.html          # Case study
 ├── css/
 │   └── site.css                              # All styles
 ├── assets/                                   # Logo, favicon, OG image
@@ -76,10 +77,10 @@ To change settings, decode the `data` attribute, edit the JSON, re-encode as bas
 
 ### Fallbacks — do not remove
 
-The form is rendered client-side by a third-party script. If that script is blocked or fails, the form does not exist on the page at all. Two safety nets handle this:
+The form is rendered client-side by a third-party script. If that script is blocked or fails, the form does not exist on the page at all. Two safety nets handle this while presenting the same fallback message:
 
 1. **`<noscript>` block** — shows email and phone when JavaScript is disabled.
-2. **6-second watchdog** (inline script near the bottom of `contact.html`) — if `#prc-contact-form` contains no `form`, `iframe`, or `input` after 6 seconds, it unhides `#form-fallback-timeout`, which shows email and phone.
+2. **8-second watchdog** (inline script near the bottom of `contact.html`) — if the embedded form has not rendered, it unhides `#form-fallback-timeout`, which shows the same email and phone fallback.
 
 This matters because a meaningful share of visitors are public-agency staff on restricted networks that block unknown third-party domains and sometimes Google reCAPTCHA.
 
@@ -106,9 +107,9 @@ This matters because a meaningful share of visitors are public-agency staff on r
 Four things live in this file:
 
 1. **Canonical host redirect** — `golden-elf-52cfd6.netlify.app` → `prcimpact.com`, so the Netlify subdomain is not indexed as a duplicate site.
-2. **Legacy redirects** — old Wix-era paths. Prune or extend based on Search Console data.
+2. **Legacy and canonical redirects** — old Wix-era paths and `.html` variants redirect to current clean routes.
 3. **Security headers** — CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy. Public-sector and enterprise buyers run automated scans against vendor sites.
-4. **Caching** — 7 days for `/css/*`, 30 days for `/assets/*`, no caching for HTML so copy edits go live immediately.
+4. **Caching** — HTML, CSS, and assets are currently configured to revalidate rather than serve stale copies while the site is actively changing.
 
 ---
 
@@ -137,4 +138,3 @@ Each page carries its own `<title>`, meta description, canonical URL, Open Graph
 - **Homepage contrast.** The H1 and the second hero paragraph are light grey on white and likely fail WCAG AA. Should be fixed — the site is sold to organizations with Section 508 obligations.
 - **Stale search index.** `www.prcimpact.com` is still indexed with the pre-relaunch Wix content. Requires a Google Search Console **Domain** property (DNS-verified, so it covers both `www` and apex), sitemap submission, URL inspection requests, and a temporary removal for the old URL. Bing Webmaster Tools too, since Bing feeds ChatGPT search and Copilot.
 - **No analytics.**
-- **`speaking-briefings.html` is thin** and is only linked from the footer.
