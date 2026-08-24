@@ -101,7 +101,13 @@
 
 [[redirects]]
   from = "/speaking-briefings.html"
-  to = "/speaking-briefings"
+  to = "/about"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/speaking-briefings"
+  to = "/about"
   status = 301
   force = true
 
@@ -161,6 +167,8 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=(), interest-cohort=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    # Revalidate page responses so new HTML is not paired with old CSS.
+    Cache-Control = "public, max-age=0, must-revalidate"
     # CSP widened to allow the embedded CRM contact form widget.
     # Requires 'unsafe-eval': the widget builds the form via eval at runtime.
     # Without it the script loads, the API returns 200, and the form silently
@@ -171,22 +179,23 @@
 
 # ---------------------------------------------------------------
 # 4. Caching.
-#    Static assets are currently served with max-age=0, so every
-#    visitor re-downloads or re-validates the CSS, logo, and fonts
-#    on every page view. Slower site, worse Core Web Vitals.
+#    The site is actively changing. Revalidate shared CSS and assets
+#    so returning visitors do not see new HTML with an older design.
+#    Netlify and browsers can still use conditional requests and 304s.
 # ---------------------------------------------------------------
 [[headers]]
   for = "/css/*"
   [headers.values]
-    Cache-Control = "public, max-age=604800, must-revalidate"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=2592000"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 # HTML stays uncached so copy edits go live immediately
 [[headers]]
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+
