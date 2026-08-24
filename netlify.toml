@@ -153,6 +153,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/work/steven-reed-mayoral-campaign.html"
+  to = "/work/steven-reed-mayoral-campaign"
+  status = 301
+  force = true
+
 # ---------------------------------------------------------------
 # 3. Security headers.
 #    Public-sector and enterprise procurement teams run automated
@@ -168,7 +174,7 @@
     Permissions-Policy = "geolocation=(), microphone=(), camera=(), interest-cohort=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     # Revalidate page responses so new HTML is not paired with old CSS.
-    Cache-Control = "public, max-age=0, must-revalidate"
+    Cache-Control = "no-store, max-age=0"
     # CSP widened to allow the embedded CRM contact form widget.
     # Requires 'unsafe-eval': the widget builds the form via eval at runtime.
     # Without it the script loads, the API returns 200, and the form silently
@@ -186,16 +192,15 @@
 [[headers]]
   for = "/css/*"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+    Cache-Control = "no-store, max-age=0"
 
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+    Cache-Control = "no-store, max-age=0"
 
 # HTML stays uncached so copy edits go live immediately
 [[headers]]
   for = "/*.html"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-
+    Cache-Control = "no-store, max-age=0"
