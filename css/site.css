@@ -89,6 +89,10 @@
     line-height: .94;
     margin-bottom: 22px;
   }
+  .home-video-hero .manifesto .line:nth-child(2) {
+    white-space: nowrap;
+    font-size: .9em;
+  }
   .home-video-hero .hero-lede {
     font-size: 16px;
     line-height: 1.6;
@@ -322,6 +326,7 @@
     padding: 48px 20px 42px;
   }
   .home-video-hero .manifesto { font-size: clamp(42px, 12.5vw, 54px); }
+  .home-video-hero .manifesto .line:nth-child(2) { font-size: .84em; }
   .home-statement,
   .home-depth,
   .home-work { padding: 46px 20px; }
@@ -370,6 +375,7 @@
   }
 
   .home-video-hero { padding-left: 18px; padding-right: 18px; }
+  .home-video-hero .manifesto .line:nth-child(2) { font-size: .8em; }
   .home-statement,
   .home-depth,
   .home-work,
