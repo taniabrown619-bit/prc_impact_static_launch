@@ -26,17 +26,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../css/site.css?v=20260824-3">
-<link rel="stylesheet" href="../../css/campaign-research-page.css?v=20261003-2">
+<link rel="stylesheet" href="../../css/campaign-research-page.css?v=20261003-3">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 </head>
 <body>
 <nav class="top" aria-label="Primary">
   <a class="logo-link" href="/" aria-label="PRC Impact home"><img class="logo-img" src="../../assets/logo-white-cropped.png" alt="PRC Impact"></a>
   <div class="nav-links"><a href="/">Home</a><a href="/research-services" class="active">Research</a><a href="/who-we-center">Who We Center</a><a href="/work">Selected Work</a><a href="/about">About</a><a href="/contact">Contact</a></div>
-  <a href="/contact" class="nav-cta">Start a Project</a>
+  <a href="#research-inquiry" class="nav-cta">Start a Project</a>
   <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer"><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span></button>
 </nav>
-<div class="mobile-drawer" id="mobile-drawer" aria-hidden="true"><div class="mobile-drawer-inner"><nav class="mobile-nav-links" aria-label="Mobile primary"><a href="/">Home</a><a href="/research-services" class="active">Research</a><a href="/who-we-center">Who We Center</a><a href="/work">Selected Work</a><a href="/about">About</a><a href="/contact">Contact</a></nav><a href="/contact" class="btn btn-primary mobile-drawer-cta">Start a Project</a></div></div>
+<div class="mobile-drawer" id="mobile-drawer" aria-hidden="true"><div class="mobile-drawer-inner"><nav class="mobile-nav-links" aria-label="Mobile primary"><a href="/">Home</a><a href="/research-services" class="active">Research</a><a href="/who-we-center">Who We Center</a><a href="/work">Selected Work</a><a href="/about">About</a><a href="/contact">Contact</a></nav><a href="#research-inquiry" class="btn btn-primary mobile-drawer-cta">Start a Project</a></div></div>
 
 <main class="campaign-research-page">
   <section class="cr-hero">
@@ -45,7 +45,7 @@
         <span class="cr-kicker">Campaign + Civic Research</span>
         <h1>Qualitative public opinion and <span>voter research.</span></h1>
         <p class="cr-hero-lede">PRC Impact helps campaigns, civic organizations, coalitions, and public-affairs teams understand how people interpret an issue, the language they use, and what shapes their response.</p>
-        <div class="cr-actions"><a class="btn btn-primary" href="/contact">Discuss a Research Project</a><a class="btn btn-outline" href="#research-video">Watch the One-Minute Guide</a></div>
+        <div class="cr-actions"><a class="btn btn-primary" href="#research-inquiry">Contact Us About Your Project</a><a class="btn btn-outline" href="tel:+13344296994">Call (334) 429-6994</a><a class="cr-watch-link" href="#research-video">Watch the One-Minute Guide</a></div>
       </div>
       <aside class="cr-scope-card" aria-label="Research scope">
         <strong>Qualitative insight, not quantitative polling.</strong>
@@ -88,7 +88,7 @@
           <p>Second: which language feels credible? Message research tests wording and framing to reveal what feels clear and what creates confusion.</p>
           <p>Third: why do views differ? One shared answer can hide distinct concerns so interviews help teams find what shaped the response.</p>
           <p>PRC Impact helps campaigns and civic teams turn qualitative research findings into clear recommendations for their next major decision.</p>
-          <div class="cr-video-links"><a href="/contact">Discuss a Research Project</a><a href="tel:+13344296994">Call (334) 429-6994</a><a href="/research-services">Explore Research Services</a></div>
+          <div class="cr-video-links"><a href="#research-inquiry">Discuss a Research Project</a><a href="tel:+13344296994">Call (334) 429-6994</a><a href="/research-services">Explore Research Services</a></div>
         </div>
       </div>
     </div>
@@ -164,15 +164,25 @@
         <details class="faq-item"><summary>Which methods can be used?</summary><div class="answer"><p>The verified qualitative methods include focus groups, in-depth interviews, listening sessions, message and issue research, and structured analysis. The final method should follow the decision, audience, timing, and evidence needed.</p></div></details>
         <details class="faq-item"><summary>Can the research support message development?</summary><div class="answer"><p>Yes. Qualitative message and issue research can explore how audiences understand language, framing, ideas, and positioning before communications or initiatives move forward. It does not promise a campaign or policy outcome.</p></div></details>
         <details class="faq-item"><summary>Does PRC Impact work nationally?</summary><div class="answer"><p>Yes. PRC Impact is based in Montgomery, Alabama and serves organizations across the South and nationally. Virtual and in-person research are available when the engagement and logistics support them.</p></div></details>
-        <details class="faq-item"><summary>What happens after the conversations are complete?</summary><div class="answer"><p>PRC Impact identifies patterns, differences, tensions, and implications, then translates the findings into clear recommendations for the decision at hand. To discuss the next step, use the <a href="/contact">project inquiry form</a>.</p></div></details>
+        <details class="faq-item"><summary>What happens after the conversations are complete?</summary><div class="answer"><p>PRC Impact identifies patterns, differences, tensions, and implications, then translates the findings into clear recommendations for the decision at hand. To discuss the next step, use the <a href="#research-inquiry">project inquiry form below</a>.</p></div></details>
       </div>
     </div>
   </section>
 
-  <section class="cr-next">
-    <div class="cr-shell cr-next-row">
-      <div><h2>Need to understand what is shaping an audience's response?</h2><p>Tell us about the issue, the people who need to be heard, and the decision the research needs to inform.</p></div>
-      <a href="/contact" class="btn btn-cream">Discuss a Research Project</a>
+  <section class="cr-intake" id="research-inquiry" aria-labelledby="research-inquiry-title">
+    <div class="cr-shell cr-intake-grid">
+      <div class="cr-intake-copy">
+        <span class="cr-kicker">Contact PRC Impact</span>
+        <h2 id="research-inquiry-title">Discuss your research project.</h2>
+        <p>Tell us about the issue, the people who need to be heard, and the decision the research needs to inform. Use the client inquiry form to share your project and timing with PRC Impact.</p>
+        <a href="tel:+13344296994" class="btn btn-primary cr-intake-call">Call (334) 429-6994</a>
+        <p class="cr-intake-note">Prefer a separate window, or having trouble with the form? <a href="https://tsalach-leadership.smblogin.com/public/forms/FormConfigID-3840db3e-afb3-4cf3-a59e-eb2e1a1e2f26" target="_blank" rel="noopener noreferrer">Open the secure project inquiry form</a>.</p>
+        <p class="cr-intake-note">Please share only the details needed for an initial inquiry. Do not include sensitive voter records or confidential participant information. <a href="/privacy">Read PRC Impact's Privacy Notice</a>.</p>
+      </div>
+      <div id="prc-research-intake-form" class="cr-intake-form" aria-label="PRC Impact client inquiry form">
+        <script async data-crm-form-widget src="https://www.cdnstyles.com/static/custom_form_widget/v1/custom_form.widget.js" data="eyJiYWNrZ3JvdW5kQ29sb3IiOiIjRjdGNUYwIiwiYmFzZVVSTCI6Imh0dHBzOi8vZm9ybXMtcHJvZC5hcGlnYXRld2F5LmNvIiwiYm9yZGVyQ29sb3IiOiIjRDhEM0M4IiwiYm9yZGVyUmFkaXVzIjoiNHB4IiwiYm9yZGVyU3R5bGUiOiJzb2xpZCIsImJvcmRlcldpZHRoIjoiMXB4IiwiZm9ybUlkIjoiRm9ybUNvbmZpZ0lELTM4NDBkYjNlLWFmYjMtNGNmMy1hNTllLWViMmUxYTFlMmYyNiIsInBhZGRpbmciOiIxMHB4IiwicHJpbWFyeUNvbG9yIjoiI0I4OTI0QSIsInByaW1hcnlGb250Q29sb3IiOiIjMTUxNTFBIiwid2lkdGgiOiIxMDAlIn0="></script>
+        <noscript><p>JavaScript is required for the embedded form. <a href="https://tsalach-leadership.smblogin.com/public/forms/FormConfigID-3840db3e-afb3-4cf3-a59e-eb2e1a1e2f26">Open the project inquiry form</a> or call <a href="tel:+13344296994">(334) 429-6994</a>.</p></noscript>
+      </div>
     </div>
   </section>
 </main>
@@ -182,7 +192,7 @@
     <div class="foot-brand"><img class="foot-logo" src="../../assets/logo-white-cropped.png" alt="PRC Impact"><p>Qualitative research and civic strategy for public-impact decisions.</p><p>Based in Montgomery, Alabama. Serving organizations across the South and nationally.</p></div>
     <div class="foot-col"><h4>Firm</h4><a href="/about">About</a><a href="/work">Selected Work</a></div>
     <div class="foot-col"><h4>Services</h4><a href="/research-services">Research</a><a href="/who-we-center">Who We Center</a></div>
-    <div class="foot-col"><h4>Connect</h4><a href="/contact">Start a Project</a><a href="https://www.linkedin.com/company/prcimpact-research" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="mailto:info@prcimpact.com">info@prcimpact.com</a></div>
+    <div class="foot-col"><h4>Connect</h4><a href="#research-inquiry">Start a Project</a><a href="https://www.linkedin.com/company/prcimpact-research" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="mailto:info@prcimpact.com">info@prcimpact.com</a></div>
   </div>
   <div class="foot-bottom"><span>© 2026 PRC Impact, LLC. All rights reserved.</span><span class="foot-legal-links"><a href="/privacy">Privacy Notice</a><a href="/terms">Terms of Service</a></span><span>Montgomery, AL</span></div>
 </footer>
