@@ -525,6 +525,67 @@
   text-underline-offset: 4px;
 }
 
+.cr-intake {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background: var(--paper);
+  scroll-margin-top: 110px;
+}
+
+.cr-intake-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, .8fr) minmax(0, 1.2fr);
+  gap: 64px;
+  align-items: start;
+}
+
+.cr-intake h2 {
+  margin-top: 20px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(40px, 4vw, 58px);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.cr-intake-copy > p {
+  margin-top: 22px;
+  color: var(--muted-light);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.cr-intake-call {
+  margin-top: 26px;
+}
+
+.cr-intake-copy > .cr-intake-note {
+  font-size: 14px;
+}
+
+.cr-intake-note a,
+.cr-watch-link,
+.cr-intake-form a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.cr-intake-form {
+  min-width: 0;
+}
+
+.cr-watch-link {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1050px) {
+  .cr-intake-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
 .cr-next {
   padding-top: 64px;
   padding-bottom: 64px;
