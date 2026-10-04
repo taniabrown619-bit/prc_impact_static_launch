@@ -1,0 +1,71 @@
+.qr-skip { position: fixed; top: -100px; left: 16px; z-index: 3000; padding: 12px 18px; background: #fff; color: #111; }
+.qr-skip:focus { top: 12px; }
+.qr-page a:focus-visible, .top a:focus-visible { outline: 3px solid var(--gold-soft); outline-offset: 5px; }
+.qr-page section[id], #main-content { scroll-margin-top: 110px; }
+.qr-breadcrumb { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 34px; color: var(--muted-light); font-size: 12px; line-height: 1.6; }
+.qr-page a:not(.btn), .qr-breadcrumb a { text-underline-offset: 4px; }
+.qr-breadcrumb a { text-decoration: underline; }
+.qr-hero-note { max-width: 700px; margin-top: 22px; color: var(--muted-light); font-size: 13px; line-height: 1.7; }
+.qr-page .cr-hero-grid { align-items: center; }
+.qr-contents { padding-top: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--line-light); }
+.qr-contents nav { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 26px; }
+.qr-contents span { color: var(--gold-soft); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; }
+.qr-contents a { font-size: 13px; text-decoration: underline; line-height: 1.6; }
+.qr-video-section { background: var(--paper-2); }
+.qr-video-section .cr-video-context { padding-left: 25px; border-left: 2px solid var(--gold-soft); }
+.qr-video-section .cr-video-player video { background: #f8f4eb; }
+.qr-video-section .cr-transcript { border-top-color: var(--line-light); }
+.qr-feature { padding-top: 76px; padding-bottom: 76px; }
+.qr-warm { background: var(--paper-2); }
+.qr-editorial { display: grid; grid-template-columns: minmax(250px,.8fr) minmax(0,1.2fr); gap: 80px; }
+.qr-page .qr-feature h2 { font-family: 'Barlow Condensed',sans-serif; font-size: clamp(42px,4vw,62px); line-height: 1.02; text-transform: uppercase; }
+.qr-prose p, .qr-two-notes p, .qr-proof-grid p { color: var(--muted-light); font-size: 16px; line-height: 1.8; margin-bottom: 18px; }
+.qr-prose .qr-answer { font-size: 20px; color: var(--ink); line-height: 1.65; }
+.qr-page .qr-prose h3, .qr-two-notes h3, .qr-proof-grid h3, .qr-resource-grid h3 { margin: 28px 0 14px; font-family: 'Barlow Condensed',sans-serif; font-size: 31px; line-height: 1.08; text-transform: uppercase; }
+.qr-prose a, .qr-proof-grid a, .qr-resource-grid a, .qr-source-note a { text-decoration: underline; }
+.qr-callout { margin-top: 30px; padding: 24px 28px; border-left: 3px solid var(--gold-soft); background: var(--paper-2); }
+.qr-page .qr-callout h3 { margin-top: 0; }
+.qr-callout a { font-size: 14px; line-height: 1.6; }
+.qr-table-wrap { overflow-x: auto; }
+.qr-method-table { width: 100%; border-collapse: collapse; text-align: left; }
+.qr-method-table caption { text-align: left; margin-bottom: 18px; font-size: 13px; color: var(--muted-light); }
+.qr-method-table th, .qr-method-table td { padding: 22px 24px; border-bottom: 1px solid var(--line-light); vertical-align: top; font-size: 15px; line-height: 1.7; }
+.qr-method-table thead { background: var(--ink-2); color: var(--paper); }
+.qr-method-table th:first-child { width: 21%; }
+.qr-method-table td { color: var(--muted-light); }
+.qr-source-note { margin-top: 22px; max-width: 1000px; font-size: 13px; line-height: 1.7; color: var(--muted-light); }
+.qr-two-notes, .qr-proof-grid, .qr-resource-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 48px; margin-top: 34px; }
+.qr-two-notes article, .qr-proof-grid article, .qr-resource-grid article { border-top: 1px solid var(--line-light); padding-top: 14px; }
+.qr-proof-grid .cr-kicker, .qr-resource-grid .cr-kicker { margin-top: 18px; margin-bottom: 14px; }
+.qr-proof-grid h3, .qr-resource-grid h3 { margin-top: 0; }
+.qr-proof-grid a { font-size: 13px; line-height: 1.8; }
+.qr-dark-note { max-width: 960px; margin-top: 28px; color: var(--muted-dark); font-size: 16px; line-height: 1.75; }
+.qr-output-list { margin: 26px 0; border-top: 1px solid var(--line-light); }
+.qr-output-list > div { display: grid; grid-template-columns: 135px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line-light); font-size: 15px; line-height: 1.7; }
+.qr-output-list dt { font-weight: 700; }
+.qr-output-list dd { color: var(--muted-light); }
+.qr-brief-list { padding-left: 24px; margin-bottom: 28px; }
+.qr-brief-list li { padding-left: 8px; margin-bottom: 18px; color: var(--muted-light); font-size: 16px; line-height: 1.8; }
+.qr-brief-list strong { color: var(--ink); }
+.qr-side-note { margin-top: 26px; color: var(--muted-light); font-size: 16px; line-height: 1.8; }
+.qr-resource-grid p { color: var(--muted-light); font-size: 15px; line-height: 1.75; margin-bottom: 18px; }
+.qr-resource-grid small { color: var(--muted-light); font-size: 12px; line-height: 1.7; }
+@media(max-width:1050px) { .qr-editorial { grid-template-columns: 1fr; gap: 32px; } }
+@media(max-width:700px) {
+  .qr-video-section .cr-video-context { padding-left: 0; border-left: 0; }
+  .qr-feature { padding-top: 52px; padding-bottom: 52px; }
+  .qr-page .qr-feature h2 { font-size: clamp(38px,10.5vw,50px); }
+  .qr-two-notes, .qr-proof-grid, .qr-resource-grid { grid-template-columns: 1fr; gap: 26px; }
+  .qr-table-wrap { overflow: visible; }
+  .qr-method-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .qr-method-table, .qr-method-table tbody, .qr-method-table tr, .qr-method-table th, .qr-method-table td { display: block; width: 100%; }
+  .qr-method-table caption { display: block; width: 100%; }
+  .qr-method-table tr { padding: 18px 0; border-top: 1px solid var(--line-light); }
+  .qr-method-table th, .qr-method-table td { padding: 8px 0; border-bottom: 0; }
+  .qr-method-table th:first-child { width: 100%; }
+  .qr-method-table td:nth-child(2)::before { content: 'Question to explore'; }
+  .qr-method-table td:nth-child(3)::before { content: 'Planning consideration'; }
+  .qr-method-table td::before { display: block; color: var(--ink); font-weight: 700; font-size: 12px; margin-bottom: 4px; }
+  .qr-output-list > div { grid-template-columns: 1fr; gap: 5px; }
+  .qr-callout { padding: 22px 20px; }
+}
