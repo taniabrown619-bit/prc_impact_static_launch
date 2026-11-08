@@ -36,25 +36,121 @@
   line-height: 1.65;
 }
 
-.guide-planning-steps {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: .9rem;
+.guide-topic-nav ul,
+.al-page .al-topics ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.guide-planning-step {
-  padding: clamp(1rem, 2.6vw, 1.65rem);
+.guide-topic-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+
+.guide-topic-nav a {
+  display: block;
+  padding: .55rem .8rem;
+  border: 1px solid #cfc2a7;
+  border-radius: .35rem;
+  background: #fff;
+  font-weight: 650;
+}
+
+.guide-answer {
+  display: grid;
+  grid-template-columns: minmax(10rem, .75fr) minmax(0, 2.5fr);
+  gap: clamp(1rem, 4vw, 3rem);
+  margin: 1.5rem 0;
+  padding: clamp(1rem, 3vw, 2.1rem);
+  scroll-margin-top: 7rem;
   border: 1px solid #dfd8c8;
-  border-top: 3px solid #a3833b;
-  border-radius: .55rem;
+  border-radius: .5rem;
   background: #fff;
 }
 
-.guide-planning-step h3 {
-  margin: 0 0 .6rem;
+.guide-answer-label {
+  color: #634a1a;
+  font-size: .85rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.guide-answer-label span {
+  display: block;
+  margin-bottom: .35rem;
+  color: #796333;
+  font-size: 1.25rem;
+}
+
+.guide-answer h3,
+.guide-buyer-faq h3 {
+  margin: 0 0 .65rem;
   color: #18181e;
-  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
-  line-height: 1.18;
+  font-size: clamp(1.4rem, 2.7vw, 2rem);
+  line-height: 1.15;
+}
+
+.guide-answer-content {
+  max-width: 70ch;
+}
+
+.guide-answer-content p + p {
+  margin-top: .8rem;
+}
+
+.guide-buyer-faq {
+  max-width: 56rem;
+  margin-top: 2.5rem;
+  scroll-margin-top: 7rem;
+}
+
+.guide-buyer-faq details {
+  border-bottom: 1px solid #d7cdb8;
+}
+
+.guide-buyer-faq summary {
+  padding: .8rem 0;
+  color: #18181e;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.guide-buyer-faq summary:focus-visible {
+  outline: 2px solid #634a1a;
+  outline-offset: .18rem;
+}
+
+.guide-buyer-faq details p {
+  padding-bottom: .8rem;
+}
+
+.al-page .al-topics {
+  margin-bottom: .9rem;
+}
+
+.al-page .al-topics h4 {
+  margin: 0 0 .35rem;
+  color: #25232a;
+  font-size: .8rem;
+}
+
+.al-page .al-topics li + li {
+  margin-top: .28rem;
+}
+
+.al-page .al-topics a {
+  color: #634a1a;
+  font-size: .88rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: .17em;
+}
+
+.al-page .al-topics a:focus-visible {
+  outline: 2px solid #634a1a;
+  outline-offset: .18rem;
 }
 
 .guide-planning a {
@@ -66,10 +162,6 @@
 .guide-planning a:focus-visible {
   outline: 2px solid #634a1a;
   outline-offset: .18em;
-}
-
-.guide-planning .guide-planning-related {
-  margin-top: 1.25rem;
 }
 
 .al-page .al-keyword-total {
@@ -98,8 +190,13 @@
 }
 
 @media (max-width: 760px) {
-  .guide-planning-steps {
+  .guide-answer {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .guide-answer-label span {
+    display: inline;
+    margin: 0 .45rem 0 0;
   }
 }
 
@@ -112,4 +209,30 @@
 .al-page .al-card,
 .al-page #keyword-data {
   scroll-margin-top: 7rem;
+}
+
+.al-page .al-keyword-lane {
+  margin: 1rem 0 .35rem;
+  color: #49453b;
+  font: 700 .78rem/1.4 'Inter', Arial, sans-serif;
+}
+
+.al-page .al-keyword-row a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: .16em;
+  overflow-wrap: anywhere;
+}
+
+.al-page .al-keyword-row a:focus-visible {
+  outline: 2px solid #634a1a;
+  outline-offset: .18rem;
+}
+
+.al-page .al-keyword-variant {
+  display: block;
+  margin-top: .25rem;
+  color: #575044;
+  font-size: .75rem;
+  font-weight: 500;
 }
