@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://prcimpact.com/</loc><lastmod>2026-08-24</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://prcimpact.com/research-services</loc><lastmod>2026-08-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://prcimpact.com/research-services</loc><lastmod>2026-11-07</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://prcimpact.com/campaigns/public-opinion-voter-research/</loc><lastmod>2026-10-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://prcimpact.com/research-services/qualitative-research-studies/</loc><lastmod>2026-10-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://prcimpact.com/public-sector/community-engagement-research/</loc><lastmod>2026-11-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -9,6 +9,11 @@
   <url><loc>https://prcimpact.com/research-services/focus-groups/</loc><lastmod>2026-11-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://prcimpact.com/research-services/in-depth-interviews/</loc><lastmod>2026-11-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://prcimpact.com/research-services/listening-sessions/</loc><lastmod>2026-11-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://prcimpact.com/research-services/qualitative-moderator/</loc><lastmod>2026-11-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://prcimpact.com/public-sector/focus-groups/</loc><lastmod>2026-11-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://prcimpact.com/public-sector/stakeholder-research/</loc><lastmod>2026-11-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://prcimpact.com/campaigns/political-focus-groups/</loc><lastmod>2026-11-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://prcimpact.com/campaigns/campaign-message-testing/</loc><lastmod>2026-11-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://prcimpact.com/who-we-center</loc><lastmod>2026-08-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://prcimpact.com/work</loc><lastmod>2026-08-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://prcimpact.com/work/montgomery-public-schools</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
