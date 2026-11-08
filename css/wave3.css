@@ -51,11 +51,12 @@
 .wave-faq details:last-child{border-bottom:1px solid #bbb5a9}
 .wave-faq summary{cursor:pointer;padding:12px 0;min-height:48px;font-weight:700;font-size:18px;line-height:1.5}
 .wave-faq details p{max-width:78ch;margin:0 0 20px}
-.wave-intake{background:#191d22;color:#fff}
+.cohort-page .cohort-intake.wave-intake{background:#191d22;color:#fff}
 .wave-intake a{color:#f0d49a}
 .wave-intake .cohort-form{color:#17171d}
 .wave-intake .cohort-form a{color:#654713}
-.wave-intake .cohort-button{color:#17171d}
+.wave-intake .cohort-button{color:#17171d;background:#f0d49a;border-color:#f0d49a}
+.wave-intake .cohort-button:hover,.wave-intake .cohort-button:focus-visible{background:#ffe8b2;border-color:#ffe8b2}
 .wave-page .cohort-intake .cohort-shell{max-width:1180px}
 .wave-moderator .wave-hero{background:#eeeee9}
 .wave-moderator .wave-hero-aside{background:#fcfaf5;border-top-color:#7e6550}
