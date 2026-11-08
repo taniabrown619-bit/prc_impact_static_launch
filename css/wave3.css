@@ -2,7 +2,7 @@
 .wave-shell{width:min(1180px,calc(100% - 48px));margin-inline:auto}
 .wave-kicker{display:inline-block;color:#8a6a2e;font-size:12px;line-height:1.3;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
 .wave-page h1,.wave-page h2,.wave-page h3{font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif;text-transform:uppercase}
-.wave-page h1{font-size:clamp(56px,6vw,90px);line-height:.95;letter-spacing:-.015em;max-width:14ch;margin:22px 0 27px}
+.wave-page h1{font-size:clamp(50px,4.7vw,68px);line-height:1;letter-spacing:-.012em;max-width:21ch;margin:22px 0 27px}
 .wave-page h2{font-size:clamp(38px,4.3vw,62px);line-height:1.01;max-width:24ch;margin:13px 0 28px}
 .wave-page h3{font-size:clamp(25px,2.5vw,34px);line-height:1.08;margin:0 0 12px}
 .wave-page p,.wave-page li{font-size:16px;line-height:1.75}
