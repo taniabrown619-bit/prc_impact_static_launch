@@ -1,0 +1,115 @@
+.guide-planning {
+  padding: clamp(2.75rem, 6vw, 5rem) 0;
+  background: #f5f2e9;
+  color: #18181e;
+  scroll-margin-top: 7rem;
+}
+
+.guide-planning-inner {
+  width: min(calc(100% - 2rem), 1120px);
+  margin-inline: auto;
+}
+
+.guide-planning-header {
+  max-width: 47rem;
+  margin-bottom: 1.75rem;
+}
+
+.guide-planning-header h2 {
+  margin: .35rem 0 .65rem;
+  color: inherit;
+  font-size: clamp(1.85rem, 3.4vw, 3rem);
+  line-height: 1.08;
+}
+
+.guide-planning-kicker {
+  color: #6b511c;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.guide-planning p {
+  margin: 0;
+  color: #333239;
+  line-height: 1.65;
+}
+
+.guide-planning-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .9rem;
+}
+
+.guide-planning-step {
+  padding: clamp(1rem, 2.6vw, 1.65rem);
+  border: 1px solid #dfd8c8;
+  border-top: 3px solid #a3833b;
+  border-radius: .55rem;
+  background: #fff;
+}
+
+.guide-planning-step h3 {
+  margin: 0 0 .6rem;
+  color: #18181e;
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  line-height: 1.18;
+}
+
+.guide-planning a {
+  color: #634a1a;
+  text-decoration: underline;
+  text-underline-offset: .17em;
+}
+
+.guide-planning a:focus-visible {
+  outline: 2px solid #634a1a;
+  outline-offset: .18em;
+}
+
+.guide-planning .guide-planning-related {
+  margin-top: 1.25rem;
+}
+
+.al-page .al-keyword-total {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  column-gap: .75rem;
+  row-gap: .15rem;
+  padding-top: .75rem;
+  border-top: 1px solid #d9cfb9;
+  margin-top: .4rem;
+}
+
+.al-page .al-keyword-total-label {
+  color: #49453b;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.al-page .al-keyword-total dd {
+  margin: 0;
+  color: #634a1a;
+  font-weight: 700;
+  text-align: start;
+}
+
+@media (max-width: 760px) {
+  .guide-planning-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.al-page .al-metric-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: .17em;
+}
+
+.al-page .al-card,
+.al-page #keyword-data {
+  scroll-margin-top: 7rem;
+}
