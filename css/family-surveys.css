@@ -22,6 +22,7 @@
 .family-worksheet dl > div { display: grid; grid-template-columns: minmax(105px, 1fr) 1.5fr; gap: 14px; padding: 10px 0; border-top: 1px solid var(--family-line); }
 .family-worksheet dt { color: var(--family-link); font-weight: 700; }
 .family-worksheet dt span { padding-left: 5px; color: var(--family-ink); }
+.family-guide .cohort-video-figure video { height: auto; }
 .family-nav { border-bottom: 1px solid var(--family-line); }
 .family-nav .cohort-shell { display: flex; flex-wrap: wrap; gap: 0 24px; }
 .family-guide .family-nav a { min-height: 44px; display: inline-flex; align-items: center; color: var(--family-link); font-weight: 700; text-decoration: underline; text-underline-offset: .2em; }
